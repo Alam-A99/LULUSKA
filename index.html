@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Kelulusan</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PENGUMUMAN KELULUSAN</h1>
+            <h2>SMK NEGERI-NEGERIAN</h2>
+            <p>Tahun Ajaran 2030/2031</p>
+        </header>
+
+        <div class="search-section">
+            <input type="text" id="searchInput" placeholder="Masukkan NISN atau Nama Siswa...">
+            <button onclick="searchStudent()">Cari</button>
+            <button onclick="loadAllData()">Tampilkan Semua</button>
+        </div>
+
+        <div id="resultSection" class="result-section" style="display: none;">
+            <div class="student-info">
+                <h3>Informasi Kelulusan</h3>
+                <div id="studentDetails"></div>
+                <button id="downloadBtn" onclick="downloadBukti()" style="display: none;">
+                    Download Bukti Kelulusan
+                </button>
+            </div>
+        </div>
+
+        <div id="allDataSection" class="data-section" style="display: none;">
+            <h3>Daftar Seluruh Siswa</h3>
+            <div class="table-container">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>NISN</th>
+                            <th>Nama</th>
+                            <th>Kelas</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <p>Loading data...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
